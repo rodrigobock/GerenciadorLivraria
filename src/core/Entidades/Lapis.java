@@ -1,6 +1,6 @@
 package core;
 
-public class Lapis extends Itens {
+public class Lapis extends EntidadeBase {
 	
 	public Lapis(String descricao, int qtde, String marca, double preco, int cod, String cor) {
 		super(descricao, qtde, marca, preco, cod);

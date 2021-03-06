@@ -1,6 +1,6 @@
 package core;
 
-public class Itens {
+public class EntidadeBase {
 	public String descricao;
 	public int quantidade;
 	public String marca;
@@ -8,7 +8,7 @@ public class Itens {
 	private int codigo;
 	
 	
-	public Itens(String descricao, int qtde, String marca, double preco, int cod) {
+	public EntidadeBase(String descricao, int qtde, String marca, double preco, int cod) {
 		this.descricao = descricao;
 		this.quantidade = qtde;
 		this.marca = marca;
@@ -42,7 +42,7 @@ public class Itens {
 		
 	};
 	
-	// Controle de estoque -> Verifica se quantidade é maior que 0
+	// Controle de estoque -> Verifica se quantidade ï¿½ maior que 0
 	
 	public void verificaEstoque() {
 		

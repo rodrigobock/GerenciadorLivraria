@@ -1,6 +1,6 @@
 package core;
 
-public class Papel extends Itens {
+public class Papel extends EntidadeBase {
 
 		public Papel(String descricao, int qtde, String marca, double preco, int cod, String tamanho) {
 			super(descricao, qtde, marca, preco, cod);

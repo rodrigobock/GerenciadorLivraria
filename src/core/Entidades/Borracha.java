@@ -1,6 +1,6 @@
 package core;
 
-public class Borracha extends Itens{
+public class Borracha extends EntidadeBase {
 	
 	public Borracha(String descricao, int qtde, String marca, double preco, int cod, String cor,String tamanho) {
 		super(descricao, qtde, marca, preco, cod);

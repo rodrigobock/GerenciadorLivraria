@@ -7,9 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ManipularArquivos {
+public class ManipuladorArquivos {
 	
-	public static boolean verificaArquivo(String caminho) {
+	public static boolean arquivoExiste(String caminho) {
 		File arquivo = new File(caminho);
 		boolean existe = arquivo.exists();
 
