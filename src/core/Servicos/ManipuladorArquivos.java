@@ -1,4 +1,4 @@
-package core;
+package core.Servicos;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,7 +27,7 @@ public class ManipuladorArquivos {
 	
 	public static boolean escreveArquivo(String caminho, String conteudo) {
 		try {
-			FileWriter arq = new FileWriter(caminho);
+			FileWriter arq = new FileWriter(caminho, true);
 			arq.write(conteudo);
 			arq.close();
 		} catch (IOException e) {
