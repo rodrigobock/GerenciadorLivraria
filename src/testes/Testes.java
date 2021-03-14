@@ -4,14 +4,16 @@ import core.Entidades.Produto;
 import core.Entidades.VendaEnum;
 import core.Servicos.ControleEstoque;
 import core.Servicos.VendaService;
+import core.Servicos.Vendas;
 
 public class Testes {
 
 	public static void main(String[] args) {
 				
 		VendaService service = new VendaService();
-
 		Produto produto = new Produto();
+		ControleEstoque estoque = new ControleEstoque();
+		Vendas vendas = new Vendas();		
 		
 		service.Setup();
 
@@ -28,7 +30,7 @@ public class Testes {
 		service.RecuperarProdutos(VendaEnum.LAPIS);
 		service.RecuperarProdutos(VendaEnum.BORRACHA);
 		
-		ControleEstoque estoque = new ControleEstoque();
+
 		
 		System.out.println("Controle de estoque: ");
 		
@@ -37,6 +39,7 @@ public class Testes {
 		estoque.estoque(VendaEnum.PAPEL);
 		estoque.estoque(VendaEnum.CANETA);
 
+		vendas.vendas(VendaEnum.BORRACHA, 80);
 		
 	}
 }

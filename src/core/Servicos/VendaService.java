@@ -17,6 +17,14 @@ public class VendaService {
             }
         }
     }
+    
+	public void CriaRegistro(){
+
+		if (!manipuladorArquivos.arquivoExiste("registro_vendas.txt"))
+		{
+			manipuladorArquivos.criaArquivo("registro_vendas.txt");
+		}
+	}
 
     public void RegistrarProduto(Produto produto){
         if (produto.getTipoProduto() == VendaEnum.PAPEL){

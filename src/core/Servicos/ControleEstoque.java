@@ -7,8 +7,8 @@ import java.util.List;
 
 public class ControleEstoque {
 	
-	private final ManipuladorArquivos manipuladorArquivos = new ManipuladorArquivos();
-	
+	private ManipuladorArquivos manipuladorArquivos = new ManipuladorArquivos();
+		
     public String estoque(VendaEnum tipo){
     	
         List<String> produto = manipuladorArquivos.lerArquivo(tipo.name() + ".txt");
@@ -52,5 +52,6 @@ public class ControleEstoque {
            
         return retorno;
      }
+
 
 }
