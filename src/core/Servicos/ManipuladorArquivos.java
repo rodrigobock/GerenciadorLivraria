@@ -9,14 +9,14 @@ import java.util.ArrayList;
 
 public class ManipuladorArquivos {
 	
-	public static boolean arquivoExiste(String caminho) {
+	public boolean arquivoExiste(String caminho) {
 		File arquivo = new File(caminho);
 		boolean existe = arquivo.exists();
 
 		return existe;
 	}
 
-	public static boolean criaArquivo(String caminho) {
+	public boolean criaArquivo(String caminho) {
 		File arquivo = new File(caminho);
 		try {
 			return arquivo.createNewFile();
@@ -25,7 +25,7 @@ public class ManipuladorArquivos {
 		}
 	}
 	
-	public static boolean escreveArquivo(String caminho, String conteudo) {
+	public boolean escreveArquivo(String caminho, String conteudo) {
 		try {
 			FileWriter arq = new FileWriter(caminho, true);
 			arq.write(conteudo);
@@ -38,7 +38,7 @@ public class ManipuladorArquivos {
 
 	}
 
-	public static ArrayList<String> lerArquivo(String caminho) {
+	public 	ArrayList<String> lerArquivo(String caminho) {
 		ArrayList<String> texto = new ArrayList<String>();
 		try {
 			FileReader arq = new FileReader(caminho);
@@ -48,6 +48,8 @@ public class ManipuladorArquivos {
 				texto.add(linha);
 				linha = bufferLeitura.readLine();
 			}
+			arq.close();
+			bufferLeitura.close();
 		} catch (IOException e) {
 			return null;
 		}
