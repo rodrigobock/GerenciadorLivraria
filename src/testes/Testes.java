@@ -17,29 +17,29 @@ public class Testes {
 		
 		service.Setup();
 
-		produto.setCodigo(121);
-		produto.setTipoProduto(VendaEnum.BORRACHA);
-		produto.setDescricao("123");
-		produto.setMarca("saeads");
-		// produto.setCor();
-		produto.setTamanho("Grande");
-		produto.setQuantidade(1);
-		produto.setPreco(8.99);
+//		produto.setCodigo(121);
+//		produto.setTipoProduto(VendaEnum.BORRACHA);
+//		produto.setDescricao("123");
+//		produto.setMarca("saeads");
+//		// produto.setCor();
+//		produto.setTamanho("Grande");
+//		produto.setQuantidade(10);
+//		produto.setPreco(8.99);
+//
+//		service.RegistrarProduto(produto);
+//		service.RecuperarProdutos(VendaEnum.LAPIS);
+//		service.RecuperarProdutos(VendaEnum.BORRACHA);
+//
+//
+//
+//		System.out.println("Controle de estoque: ");
+//
+//		estoque.listarEstoque(VendaEnum.BORRACHA);
+//		estoque.listarEstoque(VendaEnum.LAPIS);
+//		estoque.listarEstoque(VendaEnum.PAPEL);
+//		estoque.listarEstoque(VendaEnum.CANETA);
 
-		service.RegistrarProduto(produto);
-		service.RecuperarProdutos(VendaEnum.LAPIS);
-		service.RecuperarProdutos(VendaEnum.BORRACHA);
-		
-
-		
-		System.out.println("Controle de estoque: ");
-		
-		estoque.estoque(VendaEnum.BORRACHA);
-		estoque.estoque(VendaEnum.LAPIS);
-		estoque.estoque(VendaEnum.PAPEL);
-		estoque.estoque(VendaEnum.CANETA);
-
-		vendas.vendas(VendaEnum.BORRACHA, 80);
-		
+		vendas.vendas(VendaEnum.BORRACHA, 3);
+		estoque.listarEstoque(VendaEnum.BORRACHA);
 	}
 }

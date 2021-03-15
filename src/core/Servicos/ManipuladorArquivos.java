@@ -33,9 +33,7 @@ public class ManipuladorArquivos {
 		} catch (IOException e) {
 			return false;
 		}
-
 		return true;
-
 	}
 
 	public 	ArrayList<String> lerArquivo(String caminho) {
@@ -55,6 +53,4 @@ public class ManipuladorArquivos {
 		}
 		return texto;
 	}
-
-
 }
