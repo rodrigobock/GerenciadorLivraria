@@ -7,7 +7,8 @@ API REST moderna para gerenciamento de estoque de livraria, desenvolvida com Spr
 *   **Java 17**
 *   **Spring Boot 3**
 *   **Spring Data JPA**
-*   **H2 Database** (Banco em memória para facilidade de teste)
+*   **PostgreSQL** (Banco de dados em produção, hospedado no Supabase)
+*   **H2 Database** (Banco em memória utilizado apenas nos testes automatizados)
 *   **Lombok** (Redução de código boilerplate)
 *   **SpringDoc OpenAPI (Swagger)** (Documentação de API)
 *   **JUnit 5** (Testes automatizados)
@@ -25,20 +26,26 @@ API REST moderna para gerenciamento de estoque de livraria, desenvolvida com Spr
 ### Pré-requisitos
 *   Java 17 ou superior
 *   Maven 3.x
+*   Acesso a uma instância PostgreSQL (ex.: Supabase) com o schema `livraria` e suas tabelas já criadas
 
-### Execução Local (H2)
-1. Execute: `mvn spring-boot:run` (usa o perfil `dev` por padrão).
+### Variáveis de ambiente obrigatórias
+A aplicação exige as seguintes variáveis para conectar ao banco:
 
-### Execução em Produção (PostgreSQL)
-Para rodar usando o banco PostgreSQL do projeto `gz-invest` no schema `gerenciador_livraria`:
-1. Certifique-se de definir as variáveis de ambiente `DB_USERNAME` e `DB_PASSWORD`.
+| Variável | Descrição |
+| --- | --- |
+| `SPRING_DATASOURCE_URL` | URL JDBC do PostgreSQL (ex.: `jdbc:postgresql://<host>:5432/postgres?currentSchema=livraria`) |
+| `SPRING_DATASOURCE_USERNAME` | Usuário do banco |
+| `SPRING_DATASOURCE_PASSWORD` | Senha do banco |
+
+### Execução local
+1. Defina as variáveis de ambiente acima (no IntelliJ: `Run → Edit Configurations → Environment variables`).
 2. Execute:
    ```bash
-   mvn spring-boot:run -Dspring-boot.run.profiles=prod
+   mvn spring-boot:run
    ```
-   Ou, se estiver usando o JAR:
+   Ou, usando o JAR:
    ```bash
-   java -jar target/gerenciador-livraria-1.0-SNAPSHOT.jar --spring.profiles.active=prod
+   java -jar target/gerenciador-livraria-1.0-SNAPSHOT.jar
    ```
 
 ### Documentação (Swagger)
@@ -46,14 +53,18 @@ Após iniciar a aplicação, acesse a documentação interativa em:
 `http://localhost:8080/swagger-ui.html`
 
 ### Docker
-Para rodar via Docker:
+Para rodar via Docker (passando as variáveis de ambiente do banco):
 ```bash
 docker build -t gerenciador-livraria .
-docker run -p 8080:8080 gerenciador-livraria
+docker run -p 8080:8080 \
+  -e SPRING_DATASOURCE_URL="jdbc:postgresql://<host>:5432/postgres?currentSchema=livraria" \
+  -e SPRING_DATASOURCE_USERNAME="<usuario>" \
+  -e SPRING_DATASOURCE_PASSWORD="<senha>" \
+  gerenciador-livraria
 ```
 
 ## 🧪 Testes
-Para executar os testes automatizados:
+Os testes automatizados utilizam um banco H2 em memória (modo PostgreSQL), portanto **não dependem do Supabase nem das variáveis de ambiente**:
 ```bash
 mvn test
 ```
