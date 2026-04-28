@@ -1,4 +1,4 @@
-package core.Entidades;
+package com.livraria.model;
 
 public enum VendaEnum {
     PAPEL,

@@ -1,0 +1,6 @@
+com\livraria\LivrariaApplication.class
+com\livraria\model\VendaEnum.class
+com\livraria\repository\ProdutoRepository.class
+com\livraria\service\VendaService.class
+com\livraria\model\Produto.class
+com\livraria\controller\ProdutoController.class
