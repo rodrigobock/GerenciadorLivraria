@@ -1,6 +1,6 @@
-# Gerenciador de Livraria - API
+# Gerenciador de Papelaria - API
 
-API REST moderna para gerenciamento de estoque de livraria, desenvolvida com Spring Boot e Java 17. Este projeto foi evoluído de uma aplicação CLI legada para uma arquitetura escalável e pronta para deploy.
+API REST moderna para gerenciamento de estoque de papelaria, desenvolvida com Spring Boot e Java 17. Este projeto foi evoluído de uma aplicação CLI legada para uma arquitetura escalável e pronta para deploy.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -26,14 +26,14 @@ API REST moderna para gerenciamento de estoque de livraria, desenvolvida com Spr
 ### Pré-requisitos
 *   Java 17 ou superior
 *   Maven 3.x
-*   Acesso a uma instância PostgreSQL (ex.: Supabase) com o schema `livraria` e suas tabelas já criadas
+*   Acesso a uma instância PostgreSQL (ex.: Supabase) com o schema `papelaria` e suas tabelas já criadas
 
 ### Variáveis de ambiente obrigatórias
 A aplicação exige as seguintes variáveis para conectar ao banco:
 
 | Variável | Descrição |
 | --- | --- |
-| `SPRING_DATASOURCE_URL` | URL JDBC do PostgreSQL (ex.: `jdbc:postgresql://<host>:5432/postgres?currentSchema=livraria`) |
+| `SPRING_DATASOURCE_URL` | URL JDBC do PostgreSQL (ex.: `jdbc:postgresql://<host>:5432/postgres?currentSchema=papelaria`) |
 | `SPRING_DATASOURCE_USERNAME` | Usuário do banco |
 | `SPRING_DATASOURCE_PASSWORD` | Senha do banco |
 
@@ -45,7 +45,7 @@ A aplicação exige as seguintes variáveis para conectar ao banco:
    ```
    Ou, usando o JAR:
    ```bash
-   java -jar target/gerenciador-livraria-1.0-SNAPSHOT.jar
+   java -jar target/gerenciador-papelaria-1.0-SNAPSHOT.jar
    ```
 
 ### Documentação (Swagger)
@@ -55,12 +55,12 @@ Após iniciar a aplicação, acesse a documentação interativa em:
 ### Docker
 Para rodar via Docker (passando as variáveis de ambiente do banco):
 ```bash
-docker build -t gerenciador-livraria .
+docker build -t gerenciador-papelaria .
 docker run -p 8080:8080 \
-  -e SPRING_DATASOURCE_URL="jdbc:postgresql://<host>:5432/postgres?currentSchema=livraria" \
+  -e SPRING_DATASOURCE_URL="jdbc:postgresql://<host>:5432/postgres?currentSchema=papelaria" \
   -e SPRING_DATASOURCE_USERNAME="<usuario>" \
   -e SPRING_DATASOURCE_PASSWORD="<senha>" \
-  gerenciador-livraria
+  gerenciador-papelaria
 ```
 
 ## 🧪 Testes

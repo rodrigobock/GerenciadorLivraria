@@ -1,0 +1,245 @@
+{
+  "info": {
+    "name": "GerenciadorPapelaria",
+    "description": "Collection para testar as APIs do GerenciadorPapelaria após deploy no Fly.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://gerenciadorpapelaria.fly.dev",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Listar todos os produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar produto - Papel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": 101,\n  \"tipoProduto\": \"PAPEL\",\n  \"descricao\": \"Papel A4 500 folhas\",\n  \"quantidade\": 50,\n  \"marca\": \"Chamex\",\n  \"preco\": 29.90,\n  \"cor\": \"Branco\",\n  \"tamanho\": \"A4\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar produto - Lápis",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": 102,\n  \"tipoProduto\": \"LAPIS\",\n  \"descricao\": \"Lápis HB nº 2\",\n  \"quantidade\": 100,\n  \"marca\": \"Faber-Castell\",\n  \"preco\": 2.50,\n  \"cor\": \"Amarelo\",\n  \"tamanho\": \"Médio\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar produto - Caneta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": 103,\n  \"tipoProduto\": \"CANETA\",\n  \"descricao\": \"Caneta esferográfica azul\",\n  \"quantidade\": 200,\n  \"marca\": \"BIC\",\n  \"preco\": 1.75,\n  \"cor\": \"Azul\",\n  \"tamanho\": \"Médio\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar produto - Borracha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": 104,\n  \"tipoProduto\": \"BORRACHA\",\n  \"descricao\": \"Borracha branca pequena\",\n  \"quantidade\": 150,\n  \"marca\": \"Staedtler\",\n  \"preco\": 1.20,\n  \"cor\": \"Branca\",\n  \"tamanho\": \"Pequeno\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/produtos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produtos por tipo - PAPEL",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos/tipo/PAPEL",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos", "tipo", "PAPEL"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produtos por tipo - LAPIS",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos/tipo/LAPIS",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos", "tipo", "LAPIS"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produtos por tipo - CANETA",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos/tipo/CANETA",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos", "tipo", "CANETA"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produtos por tipo - BORRACHA",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos/tipo/BORRACHA",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos", "tipo", "BORRACHA"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vendas",
+      "item": [
+        {
+          "name": "Realizar venda - sucesso",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos/venda?tipo=PAPEL&quantidade=5",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos", "venda"],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "PAPEL"
+                },
+                {
+                  "key": "quantidade",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Realizar venda - estoque insuficiente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/produtos/venda?tipo=LAPIS&quantidade=99999",
+              "host": ["{{base_url}}"],
+              "path": ["api", "produtos", "venda"],
+              "query": [
+                {
+                  "key": "tipo",
+                  "value": "LAPIS"
+                },
+                {
+                  "key": "quantidade",
+                  "value": "99999"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
