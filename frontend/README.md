@@ -31,7 +31,14 @@ frontend/
 | DELETE | `/api/produtos/{id}`           | Excluir produto          |
 | POST   | `/api/produtos/venda`          | Realizar venda           |
 
-A URL base do backend está hard-coded em `src/app/produto.service.ts` (`http://localhost:8080`). Para apontar para o ambiente em Fly.io, edite essa constante.
+A URL base do backend é definida via Angular environments:
+
+| Arquivo | Quando é usado | URL |
+|---|---|---|
+| `src/environments/environment.ts` | `npm start` (dev) | `http://localhost:8080/api/produtos` |
+| `src/environments/environment.prod.ts` | `npm run build` ou `npm run start:prod` | `https://gerenciadorpapelaria.onrender.com/api/produtos` |
+
+A substituição em build de produção é configurada em `angular.json` via `fileReplacements`.
 
 ## ▶️ Como rodar
 
@@ -43,11 +50,16 @@ A URL base do backend está hard-coded em `src/app/produto.service.ts` (`http://
 ```bash
 cd frontend
 npm install
+
+# Apontando para o backend local (http://localhost:8080)
 npm start
+
+# Apontando para o backend em produção (Render.com)
+npm run start:prod
 ```
 A aplicação sobe em `http://localhost:4200`.
 
-> ℹ️ O backend já tem CORS liberado para `http://localhost:4200` (ver `WebConfig.java`). Para deploy, ajuste as origens permitidas.
+> ⚠️ O `WebConfig.java` libera CORS para `http://localhost:4200`. **Essa configuração só vale após o deploy do backend** com o código atualizado. Quando o frontend for hospedado, adicione a origem dele em `WebConfig.java`.
 
 ## 🧪 Como testar o CRUD
 1. **Criar:** preencha o formulário no topo e clique em **Cadastrar**.

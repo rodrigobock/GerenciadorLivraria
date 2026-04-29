@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Produto, TipoProduto } from './produto.model';
+import { environment } from '../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ProdutoService {
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:8080/api/produtos';
+  private baseUrl = environment.apiUrl;
 
   listarTodos(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.baseUrl);
